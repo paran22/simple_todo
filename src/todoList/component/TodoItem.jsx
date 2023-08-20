@@ -6,11 +6,12 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
   const id = todo.id;
   const checked = todo.completed;
   return (
-    <div className="todoItem" key={id}>
+    <li className="todoItem">
       <input
         type="checkbox"
         id={id}
         checked={checked}
+        onChange={() => checkItem(id)}
       />
       <label htmlFor={id} onClick={() => checkItem(id)} />
       <span
@@ -21,6 +22,6 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
         {todo.content}
       </span>
       <BsTrash className="todoItemButton" onClick={() => deleteItem(id)} />
-    </div>
+    </li>
   );
 }
