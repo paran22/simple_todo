@@ -29,4 +29,5 @@ input.inputBox {
   border-radius: 0 10px 10px 0;
   font-weight: bold;
   color: var(--primary-color);
+  cursor: pointer;
 }

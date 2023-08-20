@@ -31,4 +31,5 @@ input:checked+label {
 
 .todoItemButton {
   color: gray;
+  cursor: pointer;
 }
