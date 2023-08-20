@@ -1,3 +1,16 @@
+## Simle Todo App
+<img width="380" alt="스크린샷 2023-08-21 오전 12 46 40" src="https://github.com/paran22/simple_todo/assets/97428216/7b230614-3db4-48ac-a5cf-1c19eba6c28a">
+<br />
+- 드림코딩 리액트 강의 과제[https://academy.dream-coding.com/courses/react]
+- 리엑트와 순수 css로 구현
+
+## context 사용 <br />
+- context를 사용해서 props 전달을 최소화하고, 필요한 곳에서 필요한 context 사용하는 방식으로 구현
+- props 전달이 거의 없는 대신 Provider가 중첩으로 선언되어 복잡해짐 : 규모가 더 크거나 비즈니스 로직이 복잡한 경우에는 추가로 수정이 필요해 보임
+
+<img width="335" alt="스크린샷 2023-08-21 오전 12 45 28" src="https://github.com/paran22/simple_todo/assets/97428216/44591ea7-b2de-4090-906a-7f97dfab3dfc">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
