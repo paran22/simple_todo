@@ -20,7 +20,7 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
       >
         {todo.content}
       </span>
-      <BsTrash onClick={() => deleteItem(id)} />
+      <BsTrash className="todoItemButton" onClick={() => deleteItem(id)} />
     </div>
   );
 }
