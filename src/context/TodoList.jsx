@@ -3,11 +3,9 @@ import { createContext, useEffect, useState } from "react";
 export const TodoListContext = createContext();
 
 export function TodoListProvider({ children }) {
-  
-  const [todoList, setTodoList] = useState(getSavedData());
+  const [todoList, setTodoList] = useState(() => getSavedData());
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList));
-
   }, [todoList]);
   const checkItem = (id) => {
     setTodoList((prev) =>
