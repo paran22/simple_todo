@@ -7,20 +7,20 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
   const checked = todo.completed;
   return (
     <li className="todoItem">
-      <input className="todoCheckBox"
+      <input
+        className="todoCheckBox"
         type="checkbox"
         id={id}
         checked={checked}
         onChange={() => checkItem(id)}
       />
-      {/* <label htmlFor={id} onClick={() => checkItem(id)} /> */}
-      <span
+      <label
+        htmlFor={id}
         className="content"
-        onClick={() => checkItem(id)}
         style={{ textDecoration: `${checked ? "line-through" : ""}` }}
       >
         {todo.content}
-      </span>
+      </label>
       <BsTrash className="todoItemButton" onClick={() => deleteItem(id)} />
     </li>
   );
