@@ -1,9 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const TodoListContext = createContext();
 
 export function TodoListProvider({ children }) {
-  const [todoList, setTodoList] = useState([]);
+  
+  const [todoList, setTodoList] = useState(getSavedData());
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+
+  }, [todoList]);
   const checkItem = (id) => {
     setTodoList((prev) =>
       prev.map((todo) =>
@@ -30,3 +35,8 @@ export function TodoListProvider({ children }) {
     </TodoListContext.Provider>
   );
 }
+
+function getSavedData()  {
+  const list = localStorage.getItem("todoList");
+  return list ? JSON.parse(list) : [];
+};
