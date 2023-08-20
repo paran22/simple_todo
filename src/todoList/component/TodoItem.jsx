@@ -7,13 +7,13 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
   const checked = todo.completed;
   return (
     <li className="todoItem">
-      <input
+      <input className="todoCheckBox"
         type="checkbox"
         id={id}
         checked={checked}
-        onChange={() => {}}
+        onChange={() => checkItem(id)}
       />
-      <label htmlFor={id} onClick={() => checkItem(id)} />
+      {/* <label htmlFor={id} onClick={() => checkItem(id)} /> */}
       <span
         className="content"
         onClick={() => checkItem(id)}

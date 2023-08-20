@@ -4,24 +4,6 @@
   gap: 6px;
 }
 
-input {
-  display: none;
-}
-
-input+label {
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-  border-radius: 4px;
-  background-color: var(--background-color);
-  cursor: pointer;
-}
-
-input:checked+label {
-  background-color: black;
-  cursor: pointer;
-}
-
 .content {
   font-size: 16px;
   flex-grow: 1;
