@@ -4,9 +4,9 @@ import { BsTrash } from "react-icons/bs";
 
 export default function TodoItem({ id, checked, checkItem, deleteItem }) {
   return (
-    <div className="todoItem">
-      <input type="checkbox" id={id} checked={checked} />
-      <label for={id} onClick={() => checkItem(id)} />
+    <div className="todoItem" key={id}>
+      <input type="checkbox" id={id} onChange={() => checkItem(id)} checked={checked} />
+      <label htmlFor={id} onClick={() => checkItem(id)} />
       <span
         className="content"
         onClick={() => checkItem(id)}

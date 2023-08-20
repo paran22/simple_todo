@@ -15,7 +15,9 @@ export function TodoListProvider({ children }) {
     setTodoList((prev) => prev.filter((todo) => todo.id !== id));
   };
   return (
-    <TodoListContext.Provider value={{ todoList, checkItem, deleteItem }}>
+    <TodoListContext.Provider
+      value={{ todoList, checkItem, deleteItem }}
+    >
       {children}
     </TodoListContext.Provider>
   );

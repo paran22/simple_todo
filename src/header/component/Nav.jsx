@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Nav.css";
-
-const navItems = Object.freeze({
-  all: "All",
-  active: "Active",
-  completed: "Completed",
-});
+import { NavContext, navItems } from "../../context/Nav";
 
 export default function Nav() {
-  const [selectedNavItem, setSelectedNavItem] = useState(navItems.all);
-  const selectNavItem = (navItem) => setSelectedNavItem(navItem);
+  const { selectedNavItem, selectNavItem } = useContext(NavContext);
   return (
     <div className="nav">
       <NavItem

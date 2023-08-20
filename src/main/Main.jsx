@@ -1,41 +1,35 @@
-import React, { useState } from 'react';
-import TodoItem from './component/TodoItem';
+import React, { useContext } from "react";
+import TodoItem from "./component/TodoItem";
+import { TodoListContext } from "../context/TodoList";
+import { NavContext, navItems } from "../context/Nav";
 
 export default function Main() {
-  const [todoList, setTodoList] = useState(init);
-  const checkItem = (id) => {
-    setTodoList((prev) =>
-      prev.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed} : todo
-      )
-    );
+  const { todoList, checkItem, deleteItem } = useContext(TodoListContext);
+  const { selectedNavItem } = useContext(NavContext);
+  const filterItem = (todo, navItem) => {
+    switch (navItem) {
+      case navItems.all:
+        return true;
+      case navItems.active:
+        return !todo.completed;
+      case navItems.completed:
+        return todo.completed;
+      default:
+        throw new Error("not found");
+    }
   };
-  const deleteItem = (id) => {
-    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
-  }
   return (
     <div className="main">
-      {todoList.map((todo) => (
-        <TodoItem
-          id={todo.id}
-          checked={todo.completed}
-          checkItem={checkItem}
-          deleteItem={deleteItem}
-        />
-      ))}
+      {todoList
+        .filter((todo) => filterItem(todo, selectedNavItem))
+        .map((todo) => (
+          <TodoItem
+            id={todo.id}
+            checked={todo.completed}
+            checkItem={checkItem}
+            deleteItem={deleteItem}
+          />
+        ))}
     </div>
   );
 }
-
-  const init = [
-    {
-      id: 1,
-      content: 'test1',
-      completed: false,
-    },
-    {
-      id: 2,
-      content: 'test2',
-      completed: false,
-    }
-  ];
