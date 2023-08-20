@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.navItem {
+  color: var(--point-color);
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+}
