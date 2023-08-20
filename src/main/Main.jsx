@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import TodoItem from "./component/TodoItem";
 import { TodoListContext } from "../context/TodoList";
 import { NavContext, navItems } from "../context/Nav";
+import "./Main.css";
 
 export default function Main() {
   const { todoList, checkItem, deleteItem } = useContext(TodoListContext);
