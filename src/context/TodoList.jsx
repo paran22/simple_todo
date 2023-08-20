@@ -14,7 +14,9 @@ export function TodoListProvider({ children }) {
   const deleteItem = (id) => {
     setTodoList((prev) => prev.filter((todo) => todo.id !== id));
   };
-  const addItem = (content) => {
+  const addItem = (text) => {
+    const content = text.trim();
+    if (content === '') return;
     const id =
       todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1;
     const todo = { id: id, content: content, completed: false };
