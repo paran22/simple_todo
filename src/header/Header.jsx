@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+import ColorTheme from "./component/ColorTheme";
+import "./Header.css";
 
 export default function Header() {
   return (
-    <div className='header'>
-      Header
+    <div className="header">
+      <ColorTheme />
     </div>
   );
 }
