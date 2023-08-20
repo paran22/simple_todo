@@ -11,7 +11,7 @@ export default function TodoItem({ todo, checkItem, deleteItem }) {
         type="checkbox"
         id={id}
         checked={checked}
-        onChange={() => checkItem(id)}
+        onChange={() => {}}
       />
       <label htmlFor={id} onClick={() => checkItem(id)} />
       <span

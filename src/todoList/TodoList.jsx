@@ -20,16 +20,17 @@ export default function TodoList() {
     }
   };
   return (
-    <ul className="todoList" >
-        {todoList
-          .filter((todo) => filterItem(todo, selectedNavItem))
-          .map((todo) => (
-            <TodoItem key={todo.id}
-              todo={todo}
-              checkItem={checkItem}
-              deleteItem={deleteItem}
-            />
-          ))}
+    <ul className="todoList">
+      {todoList
+        .filter((todo) => filterItem(todo, selectedNavItem))
+        .map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            checkItem={checkItem}
+            deleteItem={deleteItem}
+          />
+        ))}
     </ul>
   );
 }
