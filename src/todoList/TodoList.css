@@ -1,4 +1,4 @@
-.main {
+.todoList {
   flex-grow: 1;
   background-color: var(--secondary-color);
   overflow-y: scroll;

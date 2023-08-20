@@ -3,7 +3,7 @@ import { NavProvider } from "./context/Nav";
 import { TodoListProvider } from "./context/TodoList";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
-import Main from "./main/Main";
+import TodoList from "./todoList/TodoList";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <section className="todo">
         <NavProvider>
           <Header />
-          <Main />
+          <TodoList />
         </NavProvider>
         <Footer />
       </section>

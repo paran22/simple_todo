@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import TodoItem from "./component/TodoItem";
 import { TodoListContext } from "../context/TodoList";
 import { NavContext, navItems } from "../context/Nav";
-import "./Main.css";
+import "./TodoList.css";
 
-export default function Main() {
+export default function TodoList() {
   const { todoList, checkItem, deleteItem } = useContext(TodoListContext);
   const { selectedNavItem } = useContext(NavContext);
   const filterItem = (todo, navItem) => {
@@ -20,7 +20,7 @@ export default function Main() {
     }
   };
   return (
-    <div className="main">
+    <div className="todoList">
       {todoList
         .filter((todo) => filterItem(todo, selectedNavItem))
         .map((todo) => (
