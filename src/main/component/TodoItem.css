@@ -14,10 +14,12 @@ input+label {
   width: 18px;
   border-radius: 4px;
   background-color: var(--background-color);
+  cursor: pointer;
 }
 
 input:checked+label {
   background-color: black;
+  cursor: pointer;
 }
 
 .content {
