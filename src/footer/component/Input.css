@@ -1,0 +1,32 @@
+.input {
+  background-color: white;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+input.inputBox {
+  display: inline;
+}
+
+.inputBox {
+  padding: 0 10px;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 14px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+}
+
+.inputBox:focus {
+  outline: none;
+}
+
+.inputButton {
+  width: 30%;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  font-weight: bold;
+  color: var(--primary-color);
+}

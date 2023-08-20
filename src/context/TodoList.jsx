@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const TodoListContext = createContext();
 
 export function TodoListProvider({ children }) {
-  const [todoList, setTodoList] = useState(init);
+  const [todoList, setTodoList] = useState([]);
   const checkItem = (id) => {
     setTodoList((prev) =>
       prev.map((todo) =>
@@ -14,24 +14,17 @@ export function TodoListProvider({ children }) {
   const deleteItem = (id) => {
     setTodoList((prev) => prev.filter((todo) => todo.id !== id));
   };
+  const addItem = (content) => {
+    const id =
+      todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1;
+    const todo = { id: id, content: content, completed: false };
+    setTodoList(prev => [...prev, todo]);
+  }
   return (
     <TodoListContext.Provider
-      value={{ todoList, checkItem, deleteItem }}
+      value={{ todoList, checkItem, deleteItem, addItem }}
     >
       {children}
     </TodoListContext.Provider>
   );
 }
-
-const init = [
-  {
-    id: 1,
-    content: "test1",
-    completed: false,
-  },
-  {
-    id: 2,
-    content: "test2",
-    completed: false,
-  },
-];

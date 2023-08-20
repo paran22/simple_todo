@@ -25,8 +25,7 @@ export default function Main() {
         .filter((todo) => filterItem(todo, selectedNavItem))
         .map((todo) => (
           <TodoItem
-            id={todo.id}
-            checked={todo.completed}
+            todo={todo}
             checkItem={checkItem}
             deleteItem={deleteItem}
           />
