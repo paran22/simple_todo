@@ -6,7 +6,6 @@ export default function Input() {
   const [todo, setTodo] = useState('');
   const { addItem } = useContext(TodoListContext);
   const addTodo = (event, todo) => {
-    console.log(todo);
     event.preventDefault();
     addItem(todo);
     setTodo('');
