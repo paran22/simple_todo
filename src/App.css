@@ -3,6 +3,15 @@
   --secondary-color: #ADC4CE;
   --point-color: #EEE0C9;
   --background-color: #F1F0E8;
+  --text-color: #gray;
+}
+
+html.dark {
+  --primary-color: #352F44;
+  --secondary-color: #5C5470;
+  --point-color: #B9B4C7;
+  --background-color: #F1F0E8;
+  --text-color: #F1F0E8;
 }
 
 body {
@@ -22,6 +31,6 @@ body {
   background-color: blue;
   border-radius: 20px;
   box-shadow: 8px 10px 9px -3px rgba(0, 0, 0, 0.61);
-    -webkit-box-shadow: 8px 10px 9px -3px rgba(0, 0, 0, 0.61);
-    -moz-box-shadow: 8px 10px 9px -3px rgba(0, 0, 0, 0.61);
+  -webkit-box-shadow: 8px 10px 9px -3px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 8px 10px 9px -3px rgba(0, 0, 0, 0.61);
 }

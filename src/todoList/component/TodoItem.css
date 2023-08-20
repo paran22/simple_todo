@@ -8,10 +8,10 @@
   font-size: 16px;
   flex-grow: 1;
   cursor: pointer;
-  color: gray;
+  color: var(--text-color);
 }
 
 .todoItemButton {
-  color: gray;
+  color: var(--text-color);
   cursor: pointer;
 }
