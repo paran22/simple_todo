@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Nav.css";
-import { NavContext, navItems } from "../../context/Nav";
+import { navItems, useNavContext } from "../../context/NavContext";
 
 export default function Nav() {
-  const { selectedNavItem, selectNavItem } = useContext(NavContext);
+  const { selectedNavItem, selectNavItem } = useNavContext();
   return (
     <div className="nav">
       <NavItem

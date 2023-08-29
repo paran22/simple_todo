@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const DarkModeContext = createContext();
 
-export function DarkModeProvider({ children }) {
+export function DarkModeContextProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   const changeMode = () => {
     setDarkMode(prev => !prev);
@@ -30,4 +30,4 @@ function updateDarkMode(darkMode) {
   localStorage.theme = 'light';
 }
 
-export const useDarkMode = () => useContext(DarkModeContext);
+export const useDarkModeContext = () => useContext(DarkModeContext);

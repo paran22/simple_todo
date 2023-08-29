@@ -1,7 +1,7 @@
 import "./App.css";
-import { DarkModeProvider } from "./context/DarkMode";
-import { NavProvider } from "./context/Nav";
-import { TodoListProvider } from "./context/TodoList";
+import { DarkModeContextProvider } from "./context/DarkModeContext";
+import { NavContextProvider } from "./context/NavContext";
+import { TodoListContextProvider } from "./context/TodoListContext";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import TodoList from "./todoList/TodoList";
@@ -9,15 +9,15 @@ import TodoList from "./todoList/TodoList";
 function App() {
   return (
     <section className="todo">
-      <DarkModeProvider>
-        <TodoListProvider>
-          <NavProvider>
+      <DarkModeContextProvider>
+        <TodoListContextProvider>
+          <NavContextProvider>
             <Header />
             <TodoList />
-          </NavProvider>
+          </NavContextProvider>
           <Footer />
-        </TodoListProvider>
-      </DarkModeProvider>
+        </TodoListContextProvider>
+      </DarkModeContextProvider>
     </section>
   );
 }

@@ -1,8 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const TodoListContext = createContext();
 
-export function TodoListProvider({ children }) {
+export function TodoListContextProvider({ children }) {
   const [todoList, setTodoList] = useState(() => getSavedData());
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList));
@@ -38,3 +38,5 @@ function getSavedData()  {
   const list = localStorage.getItem("todoList");
   return list ? JSON.parse(list) : [];
 };
+
+export const useTodoListContext = () => useContext(TodoListContext);

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const navItems = Object.freeze({
   all: "All",
@@ -8,7 +8,7 @@ export const navItems = Object.freeze({
 
 export const NavContext = createContext();
 
-export function NavProvider({ children }) {
+export function NavContextProvider({ children }) {
   const [selectedNavItem, setSelectedNavItem] = useState(navItems.all);
   const selectNavItem = (navItem) => setSelectedNavItem(navItem);
   return (
@@ -17,3 +17,5 @@ export function NavProvider({ children }) {
     </NavContext.Provider>
   );
 }
+
+export const useNavContext = () => useContext(NavContext);
