@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./Input.css";
-import { useTodoListContext } from "../../context/TodoListContext";
+import useTodoList from "../../hooks/useTodoList";
 
 export default function Input() {
-  const [todo, setTodo] = useState('');
-  const { addItem } = useTodoListContext();
+  const [todo, setTodo] = useState("");
+  const { addItem } = useTodoList();
   const addTodo = (event, todo) => {
     event.preventDefault();
     addItem(todo);
-    setTodo('');
+    setTodo("");
   };
   const onChanged = (e) => setTodo(e.target.value);
   return (

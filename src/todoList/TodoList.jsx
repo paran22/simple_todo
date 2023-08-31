@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import TodoItem from "./component/TodoItem";
-import { TodoListContext } from "../context/TodoListContext";
 import { navItems, useNavContext } from "../context/NavContext";
 import "./TodoList.css";
+import useTodoList from "../hooks/useTodoList";
 
 export default function TodoList() {
-  const { todoList, checkItem, deleteItem } = useContext(TodoListContext);
+  const { todoList, checkItem, deleteItem } = useTodoList();
   const { selectedNavItem } = useNavContext();
   const filterItem = (todo, navItem) => {
     switch (navItem) {

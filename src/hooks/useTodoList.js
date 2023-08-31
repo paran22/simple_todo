@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useRecoilState } from 'recoil'
+import { todoListState } from '../state/todoListState';
+import { useEffect } from 'react';
 
-export const TodoListContext = createContext();
-
-export function TodoListContextProvider({ children }) {
-  const [todoList, setTodoList] = useState(() => getSavedData());
+export default function useTodoList() {
+  const [todoList, setTodoList] = useRecoilState(todoListState);
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }, [todoList]);
@@ -25,18 +25,5 @@ export function TodoListContextProvider({ children }) {
     const todo = { id: id, content: content, completed: false };
     setTodoList(prev => [...prev, todo]);
   }
-  return (
-    <TodoListContext.Provider
-      value={{ todoList, checkItem, deleteItem, addItem }}
-    >
-      {children}
-    </TodoListContext.Provider>
-  );
+  return { todoList, checkItem, deleteItem, addItem }
 }
-
-function getSavedData()  {
-  const list = localStorage.getItem("todoList");
-  return list ? JSON.parse(list) : [];
-};
-
-export const useTodoListContext = () => useContext(TodoListContext);
