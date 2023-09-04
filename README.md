@@ -6,7 +6,10 @@
 
 ## context 사용 <br />
 - context를 사용해서 props 전달을 최소화하고, 필요한 곳에서 필요한 context 사용하는 방식으로 구현
-- props 전달이 거의 없는 대신 Provider가 중첩으로 선언되어 복잡해짐 : 규모가 더 크거나 비즈니스 로직이 복잡한 경우에는 추가로 수정이 필요해 보임
+- props 전달이 거의 없는 대신 Provider가 중첩으로 선언되어 복잡해짐, Provider 하위 컴포넌트 전체 리랜더링
+
+## recoil 사용 <br />
+- context api 대신 recoil을 사용하면 Provider depth가 줄어들고, 변경된 컴포넌트만 리렌더링
 
 <img width="335" alt="스크린샷 2023-08-21 오전 12 45 28" src="https://github.com/paran22/simple_todo/assets/97428216/44591ea7-b2de-4090-906a-7f97dfab3dfc">
 
